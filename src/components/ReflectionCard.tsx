@@ -8,7 +8,7 @@ import { reflectionQuestions } from "@/data/questions";
 import type { SequenceItem } from "@/context/GameContext";
 
 export function ReflectionCard() {
-  const { dispatch, goToScreen } = useGame();
+  const { dispatch, goToScreen, state } = useGame();
   const [selected, setSelected] = useState<string | null>(null);
 
   const reflectionItems = gameSequence.filter(

@@ -1,11 +1,18 @@
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    VLibras?: {
+      Widget: new (url: string) => unknown;
+    };
+  }
+}
+
 export function VLibrasWidget() {
   useEffect(() => {
     const script = document.createElement("script");
 
     script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
-
     script.async = true;
 
     script.onload = () => {
@@ -21,12 +28,5 @@ export function VLibrasWidget() {
     };
   }, []);
 
-  return (
-    <div vw="true" className="enabled">
-      <div vw-access-button="true" className="active" />
-      <div vw-plugin-wrapper="true">
-        <div className="vw-plugin-top-wrapper" />
-      </div>
-    </div>
-  );
+  return <div id="vlibras-container" aria-label="Tradutor VLibras" />;
 }
