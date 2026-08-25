@@ -52,10 +52,10 @@ function GameContent() {
       >
         Pular para o conteúdo principal
       </a>
+      <VLibrasWidget />
       <Header />
       {renderScreen()}
       <Footer />
-      <VLibrasWidget />
     </div>
   );
 }

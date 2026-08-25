@@ -1,4 +1,4 @@
-import { Check, X, ArrowRight, HelpCircle } from "lucide-react";
+import { Check, X, ArrowRight, HelpCircle, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -65,7 +65,7 @@ export function QuizQuestion() {
               className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium"
               aria-label={`Pontuação atual: ${state.score} pontos`}
             >
-              <span aria-hidden="true">⭐</span>
+              <Trophy className="size-3.5" aria-hidden="true" />
               <span>{state.score} pts</span>
             </div>
           </div>
